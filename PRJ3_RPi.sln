@@ -3,21 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRJ3_RPi", "PRJ3_RPi\PRJ3_RPi.csproj", "{F8163AD3-5A67-4876-85E3-2336E919245B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PRJ3_RPi", "PRJ3_RPi\PRJ3_RPi.csproj", "{F8163AD3-5A67-4876-85E3-2336E919245B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{F8DE7C22-3770-41C9-8901-A0B06234170F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{F8DE7C22-3770-41C9-8901-A0B06234170F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{05A36D16-F580-4BBF-BA83-CEEBFD652869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{05A36D16-F580-4BBF-BA83-CEEBFD652869}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F8DE7C22-3770-41C9-8901-A0B06234170F} = {F8DE7C22-3770-41C9-8901-A0B06234170F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{003B1EE7-8844-433C-B7D4-6844BDE4BCE9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{05A36D16-F580-4BBF-BA83-CEEBFD652869} = {05A36D16-F580-4BBF-BA83-CEEBFD652869}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_PRJ3_RPi", "Test_PRJ3_RPi\Test_PRJ3_RPi.csproj", "{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_PRJ3_RPi", "Test_PRJ3_RPi\Test_PRJ3_RPi.csproj", "{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +32,6 @@ Global
 		{05A36D16-F580-4BBF-BA83-CEEBFD652869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05A36D16-F580-4BBF-BA83-CEEBFD652869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05A36D16-F580-4BBF-BA83-CEEBFD652869}.Release|Any CPU.Build.0 = Release|Any CPU
-		{003B1EE7-8844-433C-B7D4-6844BDE4BCE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{003B1EE7-8844-433C-B7D4-6844BDE4BCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{003B1EE7-8844-433C-B7D4-6844BDE4BCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{003B1EE7-8844-433C-B7D4-6844BDE4BCE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
