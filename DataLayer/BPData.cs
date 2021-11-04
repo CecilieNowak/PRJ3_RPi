@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using RaspberryPiCore.ADC;
-
+using DTO;
 namespace DataLayer
 {
     public class BPData
@@ -19,7 +19,12 @@ namespace DataLayer
         public List<DTO_BPressure> GetBPressureData()
         {
             List<DTO_BPressure> blodtryk = new List<DTO_BPressure> { };
-            DTO_BPressure = new DTO_BPressure();
+            DTO_BPressure BP= new DTO_BPressure(0,0);
+
+
+           
+
+
 
 
 
