@@ -9,12 +9,12 @@ namespace DTO
     public class DTO_BPressure
     {
         public int systolic { get; set; }
-        public int diastolic { get; set; }
+        public int værdi { get; set; }
 
-        public DTO_BPressure(int systolic, int diastolic)
+        public DTO_BPressure(int værdi)
         {
-            this.systolic = systolic;
-            this.diastolic = diastolic;
+            this.værdi=værdi;
+            
         }
     }
 }
