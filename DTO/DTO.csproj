@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PRJ3_RPi\PRJ3_RPi.csproj" />
+    <ProjectReference Include="..\Test_PRJ3_RPi\Test_PRJ3_RPi.csproj" />
+  </ItemGroup>
+
+</Project>

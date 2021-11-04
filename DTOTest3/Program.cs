@@ -7,11 +7,11 @@ using System;
 
 namespace DTOTest3
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Helllo World!");
+            Console.WriteLine("Hello World!");
         }
     }
 }
