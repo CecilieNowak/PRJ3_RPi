@@ -12,18 +12,18 @@ namespace DataLayer
     class UDPSender
     {
         private const int listenPortCommand = 12000;
-        ADC1015 aDC = new ADC1015();
+   
 
         public void SendData()
         {
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            IPAddress broadcast = IPAddress.Parse("192.168.1.117");
+            IPAddress broadcast = IPAddress.Parse("192.168.1.117");                                              // opsætning af UDPSender protokol
             IPEndPoint ep = new IPEndPoint(broadcast, 12000);
 
             DTO_BPressure blodData = new DTO_BPressure(0);
 
             blodData.Systolic = 60;
-            blodData.Diastolic = 50;
+            blodData.Diastolic = 50;                  // Værdier som skal sendes vha vores UDP sender                                  
             blodData.Pulse = 60;
 
 
@@ -33,14 +33,14 @@ namespace DataLayer
                 try
                 {
                     byte[] jsonUtf8Bytes;
-                    JsonSerializerOptions sendValue = new JsonSerializerOptions() { WriteIndented = true };
+                    JsonSerializerOptions sendValue = new JsonSerializerOptions() { WriteIndented = true }; // De her 3 linjer har den opgave at oversætte vores blodData objekt til Byte, således at SendTo funktion kan forstår den  
                     jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(blodData, sendValue);
 
-                    s.SendTo(jsonUtf8Bytes, ep);   // SendTo funktion kan kun tage imod BYTE
+                    s.SendTo(jsonUtf8Bytes, ep);   // SendTo funktion kan kun tage imod BYTE, SendTo opgave er at start med at aktivere senderen og at start med at sende data
 
-                    Console.WriteLine("Systolic: " + blodData.Systolic);
-                    Console.WriteLine("diastolic: " + blodData.Diastolic);
-                    Console.WriteLine("Pulse:" + blodData.Pulse);
+                    Console.WriteLine("Systolic: " + blodData.Systolic);      // Her er vores Data som skal sendes 
+                    Console.WriteLine("diastolic: " + blodData.Diastolic);    // Her er vores Data som skal sendes
+                    Console.WriteLine("Pulse:" + blodData.Pulse);             //Her er vores Data som skal sendes 
 
                 }
                 catch (InvalidOperationException)
