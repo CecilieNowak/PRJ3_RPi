@@ -6,13 +6,15 @@ using System.Net.Sockets;
 using RaspberryPiCore.ADC;
 using DTO;
 using System.Text.Json;
+using RaspberryPiCore.ADC;
 
 namespace DataAccessLayer
 {
     class UDPSender
     {
         private const int listenPortCommand = 12000;
-   
+        private ADC1015 aDC;
+
 
         public void SendData()
         {
@@ -22,6 +24,9 @@ namespace DataAccessLayer
 
             DTO_BPressure blodData = new DTO_BPressure(0);
 
+           // BPData blod = new BPData();
+           
+            
             blodData.Systolic = 60;
             blodData.Diastolic = 50;                  // Værdier som skal sendes vha vores UDP sender                                  
             blodData.Pulse = 60;
@@ -33,8 +38,9 @@ namespace DataAccessLayer
                 try
                 {
                     byte[] jsonUtf8Bytes;
-                    JsonSerializerOptions sendValue = new JsonSerializerOptions() { WriteIndented = true }; // De her 3 linjer har den opgave at oversætte vores blodData objekt til Byte, således at SendTo funktion kan forstår den  
+                    JsonSerializerOptions sendValue = new JsonSerializerOptions() { WriteIndented = true }; // De her 3 linjer har den opgave at oversætte vores blodData objekt til Byte, således at SendTo funktion kan forstår den 
                     jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(blodData, sendValue);
+                    // jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(blod.GetBPressureData(), sendValue);
 
                     s.SendTo(jsonUtf8Bytes, ep);   // SendTo funktion kan kun tage imod BYTE, SendTo opgave er at start med at aktivere senderen og at start med at sende data
 

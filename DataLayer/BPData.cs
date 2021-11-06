@@ -11,9 +11,9 @@ namespace DataAccessLayer
         private ADC1015 aDC;
        
 
-        public BPData(ADC1015 adc)
+        public BPData()
         {
-            aDC = adc;
+           
         }
 
 
