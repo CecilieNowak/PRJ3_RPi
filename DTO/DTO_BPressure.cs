@@ -8,7 +8,9 @@ namespace DTO
 {
     public class DTO_BPressure
     {
-        public int systolic { get; set; }
+        public int Systolic { get; set; }
+        public int Diastolic { get; set; }
+        public int Pulse { get; set; }
         public int værdi { get; set; }
 
         public DTO_BPressure(int værdi)
