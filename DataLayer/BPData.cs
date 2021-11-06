@@ -4,7 +4,7 @@ using System.Text;
 using RaspberryPiCore.ADC;
 using DTO;
 
-namespace DataLayer
+namespace DataAccessLayer
 {
     public class BPData
     {

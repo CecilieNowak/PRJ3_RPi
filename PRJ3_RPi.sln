@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PRJ3_RPi", "PRJ3_RPi\PRJ3_R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_PRJ3_RPi", "Test_PRJ3_RPi\Test_PRJ3_RPi.csproj", "{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{314F7BD6-2D38-42AB-824E-1CF724F545E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataLayer\DataAccessLayer.csproj", "{314F7BD6-2D38-42AB-824E-1CF724F545E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{8959726E-E738-47AB-AD30-97B21F4C90A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{8959726E-E738-47AB-AD30-97B21F4C90A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{2D22A0DB-B36E-4571-AC49-0864173A426C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8959726E-E738-47AB-AD30-97B21F4C90A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8959726E-E738-47AB-AD30-97B21F4C90A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8959726E-E738-47AB-AD30-97B21F4C90A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D22A0DB-B36E-4571-AC49-0864173A426C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D22A0DB-B36E-4571-AC49-0864173A426C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D22A0DB-B36E-4571-AC49-0864173A426C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D22A0DB-B36E-4571-AC49-0864173A426C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

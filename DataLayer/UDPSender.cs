@@ -7,7 +7,7 @@ using RaspberryPiCore.ADC;
 using DTO;
 using System.Text.Json;
 
-namespace DataLayer
+namespace DataAccessLayer
 {
     class UDPSender
     {
