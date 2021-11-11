@@ -9,27 +9,29 @@ namespace DataAccessLayer
     public class BPData
     {
         private ADC1015 aDC;
-       
+        private List<DTO_BPressure> blodtryklist;
+
 
         public BPData()
         {
-           
+            blodtryklist = new List<DTO_BPressure> { };
         }
+            
 
 
         public List<DTO_BPressure> GetBPressureData()
         {
-            List<DTO_BPressure> blodtryk = new List<DTO_BPressure> { }; 
+            
             DTO_BPressure BP= new DTO_BPressure(0);
 
             while (true) // (så længe vi får værdier fra ADC) 
             {
                 BP = new DTO_BPressure(aDC.readADC_Differential_0_1());
-                blodtryk.Add(BP);
+                blodtryklist.Add(BP);
             }
             
           
-            return blodtryk;
+            return blodtryklist;
 
 
 
