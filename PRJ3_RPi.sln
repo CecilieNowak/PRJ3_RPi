@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PRJ3_RPi", "PRJ3_RPi\PRJ3_RPi.csproj", "{F8163AD3-5A67-4876-85E3-2336E919245B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PresentationLayer", "PRJ3_RPi\PresentationLayer.csproj", "{F8163AD3-5A67-4876-85E3-2336E919245B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_PRJ3_RPi", "Test_PRJ3_RPi\Test_PRJ3_RPi.csproj", "{CB5DC5A4-4FB8-4B33-9003-458619BF39B6}"
 EndProject
@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataLaye
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{8959726E-E738-47AB-AD30-97B21F4C90A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{2D22A0DB-B36E-4571-AC49-0864173A426C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{2D22A0DB-B36E-4571-AC49-0864173A426C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8959726E-E738-47AB-AD30-97B21F4C90A4} = {8959726E-E738-47AB-AD30-97B21F4C90A4}
+		{314F7BD6-2D38-42AB-824E-1CF724F545E5} = {314F7BD6-2D38-42AB-824E-1CF724F545E5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

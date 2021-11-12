@@ -8,14 +8,12 @@ namespace DTO
 {
     public class DTO_BPressure
     {
-        public int Systolic { get; set; }
-        public int Diastolic { get; set; }
-        public int Pulse { get; set; }
-        public int værdi { get; set; }
+     
+        public int Værdi { get; set; }
 
-        public DTO_BPressure(int værdi)
+        public DTO_BPressure()
         {
-            this.værdi=værdi;
+            
             
         }
     }
