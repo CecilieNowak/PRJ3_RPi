@@ -17,19 +17,25 @@ namespace PresentationLayer
         
         static void Main(string[] args)
         {
-            BlockingCollection<DTO_BPressure> dataQueue = new BlockingCollection<DTO_BPressure>();
 
-            BPData bpData = new BPData(dataQueue);
-            UDPSender udpSender = new UDPSender(dataQueue);
+            while (!Console.KeyAvailable)
+            {
+                BlockingCollection<DTO_BPressure> dataQueue = new BlockingCollection<DTO_BPressure>();
 
-            Thread producerThread = new Thread(bpData.Run);
-            Thread consumerThread = new Thread(udpSender.SendData);
+                BPData bpData = new BPData(dataQueue);
+                UDPSender udpSender = new UDPSender(dataQueue);
 
-            producerThread.Start();
-            consumerThread.Start();
+                Thread producerThread = new Thread(bpData.Run);
+                Thread consumerThread = new Thread(udpSender.SendData);
 
-            Console.ReadKey();
+                producerThread.Start();
+                consumerThread.Start();
+
+                Console.ReadKey();
+
+            }
             
+        
         
             
 

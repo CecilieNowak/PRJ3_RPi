@@ -25,10 +25,10 @@ namespace DataAccessLayer
         public void Run()
         {
 
-            while (true) // (så længe vi får værdier fra ADC) 
+            while (true) 
             {
                 DTO_BPressure reading = new DTO_BPressure();
-                reading.Værdi = aDC.readADC_Differential_0_1();
+                reading.Værdi = Convert.ToDouble(aDC.readADC_SingleEnded(0));
                 _dataQueue.Add(reading);
 
                 Thread.Sleep(10); //tiden mellem hvert DTO_objekt der oprettes
