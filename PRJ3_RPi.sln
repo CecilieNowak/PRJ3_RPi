@@ -12,6 +12,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{8959726E-E738-47AB-AD30-97B21F4C90A4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{2D22A0DB-B36E-4571-AC49-0864173A426C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8959726E-E738-47AB-AD30-97B21F4C90A4} = {8959726E-E738-47AB-AD30-97B21F4C90A4}
+		{314F7BD6-2D38-42AB-824E-1CF724F545E5} = {314F7BD6-2D38-42AB-824E-1CF724F545E5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
