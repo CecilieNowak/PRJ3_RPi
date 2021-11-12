@@ -20,7 +20,7 @@ namespace DataAccessLayer
         public UDPSender()
         {
             blod = new BPData();
-            blodtryklist = new List<DTO_BPressure> { };
+            blodtryklist = new List<DTO_BPressure> { }; 
             
         }
    

@@ -19,22 +19,24 @@ namespace DataAccessLayer
             
 
 
-        public List<DTO_BPressure> GetBPressureData()
+        public List<DTO_BPressure> GetBPressureData()   //blocking cole
         {
             
             DTO_BPressure BP= new DTO_BPressure(0);
 
-            while (true) // (så længe vi får værdier fra ADC) 
+            for (;;)     // (så længe vi får værdier fra ADC) 
             {
-                BP = new DTO_BPressure(aDC.readADC_Differential_0_1());
-                blodtryklist.Add(BP);
+                BP = new DTO_BPressure(aDC.readADC_SingleEnded(0));
+                blodtryklist.Add(BP); //blocking col
             }
             
+
           
             return blodtryklist;
 
 
 
         }
+
     }
 }

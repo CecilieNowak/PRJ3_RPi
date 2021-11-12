@@ -12,6 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
+    <ProjectReference Include="..\DataLayer\DataAccessLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="RaspberryCore">
       <HintPath>C:\RaspberryPi\RaspberryCore.dll</HintPath>
     </Reference>
