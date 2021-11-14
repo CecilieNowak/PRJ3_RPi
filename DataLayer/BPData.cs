@@ -19,6 +19,7 @@ namespace DataAccessLayer
         {
             //blodtryklist = new List<DTO_BPressure> { };
             _dataQueue = dataQueue;
+            aDC = new ADC1015();   // Vi glemt den her !!!!!!!!!!!!!!! Derfor virkede vores program ikke
         }
 
 
