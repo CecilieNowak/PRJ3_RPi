@@ -45,7 +45,7 @@ namespace DataAccessLayer
 
                     JsonSerializerOptions sendValue = new JsonSerializerOptions() { WriteIndented = true }; // De her 3 linjer har den opgave at oversætte vores blodData objekt til Byte, således at SendTo funktion kan forstår den 
                     jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(container, sendValue);
-                    Console.WriteLine("Data sendt");
+                    Console.WriteLine(container.Værdi); // Her printer den ADC værdier
 
                 }
 
