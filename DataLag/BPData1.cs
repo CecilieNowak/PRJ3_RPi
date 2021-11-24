@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using RaspberryPiNetCore.ADC;
+using System.Threading.Tasks;
 using System.Threading;
 using DTO;
 using System.Collections.Concurrent;
+using RaspberryPiNetCore.ADC;
 
-namespace DataAccessLayer
+
+ namespace DataLag
 {
-
-
-
-
-
-    public class BPData
+    public class BPData1
     {
 
-        private ADC
+        private ADC1015 aDC; 
+
         private readonly BlockingCollection<DTO_BPressure> _dataQueue;
-        //private List<DTO_BPressure> blodtryklist;
+        
 
 
-        public BPData(BlockingCollection<DTO_BPressure> dataQueue)
+        public BPData1(BlockingCollection<DTO_BPressure> dataQueue)
         {
-            //blodtryklist = new List<DTO_BPressure> { };
+            
             _dataQueue = dataQueue;
-           // aDC = new ADC1015(72, 512);   
+            aDC = new ADC1015(72, 512);   
         }
 
 
         public void Run()
         {
 
-            while (true) 
+            while (true)
             {
 
                 DTO_BPressure reading = new DTO_BPressure();
@@ -43,9 +42,12 @@ namespace DataAccessLayer
             }
 
 
-        
-
         }
+
+
+
+
+
 
     }
 }

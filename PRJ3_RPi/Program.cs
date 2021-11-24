@@ -3,17 +3,17 @@ using RaspberryPiCore.JoySticks;
 using RaspberryPiCore.LCD;
 using RaspberryPiCore.TWIST;
 using System;
-using DataAccessLayer;
 using System.Collections.Concurrent;
 using System.Threading;
 using DTO;
+using DataLag;
+using System.Threading.Tasks;
 
 
 namespace PresentationLayer
 {
     class Program
     {
-        
         
         static void Main(string[] args)
         {
@@ -22,7 +22,9 @@ namespace PresentationLayer
             {
                 BlockingCollection<DTO_BPressure> dataQueue = new BlockingCollection<DTO_BPressure>();
 
-                BPData bpData = new BPData(dataQueue);
+
+                BPData1 bpData = new BPData1(dataQueue);
+                 
                 UDPSender udpSender = new UDPSender(dataQueue);
 
                 Thread producerThread = new Thread(bpData.Run);
