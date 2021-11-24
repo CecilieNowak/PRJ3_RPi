@@ -38,10 +38,7 @@ namespace PresentationLayer
             }
             
         
-        
-            
-
-
+      
         }
     }
 }

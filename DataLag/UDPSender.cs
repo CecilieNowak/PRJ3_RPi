@@ -16,17 +16,14 @@ namespace DataLag
 
         private const int listenPortCommand = 12000;
         private BPData1 blod;
-
-        //        private List<DTO_BPressure> blodtryklist;
         private readonly BlockingCollection<DTO_BPressure> _dataQueue;
         private byte[] jsonUtf8Bytes;
+
 
         public UDPSender(BlockingCollection<DTO_BPressure> dataQueue)
         {
             _dataQueue = dataQueue;
-
         }
-
 
 
         public void SendData()
@@ -34,7 +31,6 @@ namespace DataLag
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             IPAddress broadcast = IPAddress.Parse("192.168.1.117");                                              // opsætning af UDPSender protokol
             IPEndPoint ep = new IPEndPoint(broadcast, 12000);
-
 
             while (!_dataQueue.IsCompleted)
             {
@@ -53,48 +49,12 @@ namespace DataLag
                 catch (InvalidOperationException)
                 {
 
-
                 }
 
             }
 
 
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

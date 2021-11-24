@@ -24,18 +24,23 @@ using RaspberryPiNetCore.ADC;
         {
             
             _dataQueue = dataQueue;
-            aDC = new ADC1015(72, 512);   
+            aDC = new ADC1015(72,512);   
+
         }
 
 
         public void Run()
         {
 
+            aDC.SamplingsRate = 150;
+            aDC.ReadADC_Differential_0_1();
+
             while (true)
             {
+                
 
                 DTO_BPressure reading = new DTO_BPressure();
-                reading.Værdi = Convert.ToDouble(0); //Skal ændres
+                reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take(); //Skal ændres
                 _dataQueue.Add(reading);
                 Thread.Sleep(10); //tiden mellem hvert DTO_objekt der oprettes
 
