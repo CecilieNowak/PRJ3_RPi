@@ -7,6 +7,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using DataLag;
+using System.Device.Gpio;
 
 namespace PresentationLayer
 {
@@ -14,23 +15,55 @@ namespace PresentationLayer
     {
         static void Main(string[] args)
         {
-            while (!Console.KeyAvailable)
+
+            SerLCD LCD = new SerLCD();
+
+
+            Button1 button1 = new Button1();
+            Button2 button2 = new Button2();
+
+            LCD.lcdClear();
+            LCD.lcdSetBackLight(50, 200, 50);
+            LCD.lcdPrint("Blodtryksmaaler");
+            LCD.lcdGotoXY(0, 1);
+            LCD.lcdPrint("1:Start BT maaling");
+            LCD.lcdGotoXY(0, 2);
+            LCD.lcdPrint("2:Stop måling");
+
+            if (button1.IsPressed()==true)
             {
-                BlockingCollection<DTO_BPressure> dataQueue = new BlockingCollection<DTO_BPressure>();
+
+                while (!Console.KeyAvailable)
+                {
+                    LCD.lcdGotoXY(0, 3);
+                    LCD.lcdPrint("MaaLING I GANG NU ....");
 
 
-                BPData bpData = new BPData(dataQueue);
-                UDPSender udpSender = new UDPSender(dataQueue);
+                    BlockingCollection<DTO_BPressure> dataQueue = new BlockingCollection<DTO_BPressure>();
 
-                Thread producerThread = new Thread(bpData.Run);
-                Thread consumerThread = new Thread(udpSender.SendData);
 
-                producerThread.Start();
-                consumerThread.Start();
+                    BPData bpData = new BPData(dataQueue);
+                    UDPSender udpSender = new UDPSender(dataQueue);
 
-                Console.ReadKey();
+                    Thread producerThread = new Thread(bpData.Run);
+                    Thread consumerThread = new Thread(udpSender.SendData);
+
+                    producerThread.Start();
+                    consumerThread.Start();
+
+                    Console.ReadKey();
+
+                }
 
             }
+            else if (button2.IsPressed()==true)
+            {
+                LCD.lcdClear();
+                LCD.lcdPrint("Måling er stoppet");
+
+            }
+
+         
         }
     }
 }

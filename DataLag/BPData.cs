@@ -34,7 +34,7 @@ namespace DataLag
             {
 
                 DTO_BPressure reading = new DTO_BPressure();
-                reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take(); //Skal ændres
+                reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take(); 
                 _dataQueue.Add(reading);
                 Thread.Sleep(10); //tiden mellem hvert DTO_objekt der oprettes
 
