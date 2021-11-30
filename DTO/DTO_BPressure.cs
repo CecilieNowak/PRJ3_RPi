@@ -9,7 +9,7 @@ namespace DTO
     public class DTO_BPressure
     {
      
-        public double Værdi { get; set; }
+        public int Værdi { get; set; }
 
         public DTO_BPressure()
         {
