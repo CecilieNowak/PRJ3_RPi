@@ -84,12 +84,16 @@ namespace PresentationLayer
                             LCD.lcdGotoXY(0, 2);
                             LCD.lcdPrint("2:Start BT maaling");
 
-                            break;¨                                                              // break så kommer vi ud af While og kom tilbage til start
+                            break;                                                              // break så kommer vi ud af While og kom tilbage til start
                         }
                         else if (button1.IsPressed())                                           // NULPUNKTJUSTERING
                         {
                             LCD.lcdClear();
-                            LCD.lcdPrint("Nulpunktsjustering i gang ");
+                            LCD.lcdPrint("Nulpunktsjustering");
+                            LCD.lcdGotoXY(0, 1);
+                            LCD.lcdPrint("Maalte tryk: ");
+                            LCD.lcdGotoXY(0, 2);
+                            LCD.lcdPrint("xxxx enhed");
                             LCD.lcdGotoXY(0, 3);
                             LCD.lcdPrint("2:Tilbage");
 
