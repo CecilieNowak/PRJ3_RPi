@@ -20,6 +20,22 @@ namespace PresentationLayer
             Button1 button1 = new Button1();
             Button2 button2 = new Button2();
 
+            LCD.lcdSetBackLight(200, 30, 20);
+            LCD.lcdPrint("___BLODTRYKMAALER___");
+            Thread.Sleep(3000);
+            LCD.lcdSetBackLight(200, 30, 20);
+            LCD.lcdGotoXY(0, 1);
+            LCD.lcdPrint("______Gruppe 4______");
+            Thread.Sleep(3000);
+            LCD.lcdSetBackLight(200, 30, 20);
+            LCD.lcdGotoXY(0, 2);
+            LCD.lcdPrint("--Best of the best--");
+            Thread.Sleep(3000);
+
+
+       
+
+
 
 
 
@@ -68,7 +84,7 @@ namespace PresentationLayer
                             LCD.lcdGotoXY(0, 2);
                             LCD.lcdPrint("2:Start BT maaling");
 
-                            break;
+                            break;¨                                                              // break så kommer vi ud af While og kom tilbage til start
                         }
                         else if (button1.IsPressed())                                           // NULPUNKTJUSTERING
                         {
@@ -98,8 +114,7 @@ namespace PresentationLayer
                     LCD.lcdPrint("Maling i gang.... ");
                     LCD.lcdGotoXY(0, 2);
                     LCD.lcdPrint("1:Stop maaling");
-                    LCD.lcdGotoXY(0, 3);
-                    LCD.lcdPrint("2:Tilbage");
+                    
 
 
                     BlockingCollection<DTO_BPressure> dataQueue = new BlockingCollection<DTO_BPressure>();
@@ -155,44 +170,6 @@ namespace PresentationLayer
                 }
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-       
-
-
-
-
-
         }
     }
 }

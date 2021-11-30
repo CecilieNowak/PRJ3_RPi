@@ -14,23 +14,22 @@ namespace DataLag
 
         private ADC1015 aDC;
         private readonly BlockingCollection<DTO_BPressure> _dataQueue;
-
         public bool button1 { set; get;}
-        private BlockingCollection<DTO_BPressure> dataQueue;
+       
         
+
 
         public BPData(BlockingCollection<DTO_BPressure> dataQueue)
         {
             _dataQueue = dataQueue;
             aDC = new ADC1015(72, 512);
             button1 = true;
-            
         }
+
 
 
         public void Run()
         {
-
             aDC.SamplingsRate = 150;
             aDC.ReadADC_Differential_0_1();
 
@@ -39,14 +38,12 @@ namespace DataLag
                 DTO_BPressure reading = new DTO_BPressure();
                 reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take(); 
                 _dataQueue.Add(reading);
-                //Thread.Sleep(10); //tiden mellem hvert DTO_objekt der oprettes
-                Thread.Sleep(1000);
+                Thread.Sleep(1000); //tiden mellem hvert DTO_objekt der oprettes
             }
-
-
-        
-
         }
 
+
+
     }
+
 }
