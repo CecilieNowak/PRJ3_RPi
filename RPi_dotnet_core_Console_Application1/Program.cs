@@ -88,13 +88,14 @@ namespace PresentationLayer
                         }
                         else if (button1.IsPressed())                                           // NULPUNKTJUSTERING
                         {
+                            NulPunktJusteringVærdi værdi = new NulPunktJusteringVærdi();
+                            værdi.AvgNulpunktVærdi();
                             LCD.lcdClear();
                             LCD.lcdPrint("Nulpunktsjustering");
                             LCD.lcdGotoXY(0, 1);
-                            LCD.lcdPrint("Maalte tryk: ");
+                            LCD.lcdPrint("Gennemsnit: "+ værdi.NulPunktVærdi); //Convert.ToString(værdi.AvgNulpunktVærdi()
+
                             LCD.lcdGotoXY(0, 2);
-                            LCD.lcdPrint("xxxx enhed");
-                            LCD.lcdGotoXY(0, 3);
                             LCD.lcdPrint("2:Tilbage");
 
                             while (c)

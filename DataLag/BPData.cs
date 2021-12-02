@@ -39,8 +39,39 @@ namespace DataLag
                 reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take(); 
                 _dataQueue.Add(reading);
                 Thread.Sleep(1000); //tiden mellem hvert DTO_objekt der oprettes
+
             }
         }
+
+
+
+        public static List<int> rawVærdier()
+        {
+            ADC1015 aDC = new ADC1015(72, 512);
+            
+            aDC.SamplingsRate = 150;
+            aDC.ReadADC_Differential_0_1();
+
+            List<int> samples = new List<int>();
+
+            
+
+            for (int i = 0; i < 150; i++)
+            {
+
+                samples.Add(aDC.DIFFERENCE_Measurement[0].Take());
+
+            }
+
+            return samples;
+
+
+
+        }
+
+
+
+
 
 
 

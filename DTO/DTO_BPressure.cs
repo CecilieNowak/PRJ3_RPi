@@ -11,10 +11,14 @@ namespace DTO
      
         public int Værdi { get; set; }
 
+        public int avgNul;
+
         public DTO_BPressure()
         {
             
             
         }
+
+
     }
 }
