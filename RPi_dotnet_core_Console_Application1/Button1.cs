@@ -20,7 +20,6 @@ namespace PresentationLayer
             Controller = new GpioController();
             Controller.OpenPin(17, PinMode.InputPullUp);
             StartIsPressed = true;
-
         }
 
 

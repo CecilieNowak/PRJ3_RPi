@@ -32,13 +32,17 @@ namespace DataLag
         {
             aDC.SamplingsRate = 150;
             aDC.ReadADC_Differential_0_1();
+            aDC.ReadADC_SingleEnded(2);
 
             while (button1) 
             {
                 DTO_BPressure reading = new DTO_BPressure();
-                reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take(); 
+                reading.Værdi = aDC.DIFFERENCE_Measurement[0].Take();
+                reading.battery = aDC.SINGLE_Measurement[2].Take();
                 _dataQueue.Add(reading);
-                Thread.Sleep(1000); //tiden mellem hvert DTO_objekt der oprettes
+                //Console.WriteLine(reading.Værdi);
+
+               // Thread.Sleep(1000); //tiden mellem hvert DTO_objekt der oprettes
 
             }
         }

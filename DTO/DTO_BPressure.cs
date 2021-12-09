@@ -10,6 +10,7 @@ namespace DTO
     {
      
         public int Værdi { get; set; }
+        public int battery { get; set;}
 
         public int avgNul;
 

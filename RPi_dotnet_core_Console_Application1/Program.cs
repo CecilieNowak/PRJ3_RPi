@@ -93,7 +93,7 @@ namespace PresentationLayer
                             LCD.lcdClear();
                             LCD.lcdPrint("Nulpunktsjustering");
                             LCD.lcdGotoXY(0, 1);
-                            LCD.lcdPrint("Gennemsnit: "+ værdi.NulPunktVærdi); //Convert.ToString(værdi.AvgNulpunktVærdi()
+                            LCD.lcdPrint("Gennemsnit: "+ værdi.NulPunktVærdi); // Her 
 
                             LCD.lcdGotoXY(0, 2);
                             LCD.lcdPrint("2:Tilbage");
